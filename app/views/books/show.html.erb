@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @book.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Amazon product url:</strong>
+  <%= @book.amazon_product_url %>
+</p>
+
+<p>
+  <strong>Age group:</strong>
+  <%= @book.age_group %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @book.rank %>
+</p>
+
+<p>
+  <strong>Weeks on list:</strong>
+  <%= @book.weeks_on_list %>
+</p>
+
+<p>
+  <strong>Primary isbn10:</strong>
+  <%= @book.primary_isbn10 %>
+</p>
+
+<p>
+  <strong>Primary isbn13:</strong>
+  <%= @book.primary_isbn13 %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
