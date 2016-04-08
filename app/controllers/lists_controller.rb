@@ -4,7 +4,8 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all 
+    lists = List.all 
+    @lists = lists.order(:name)
   end
 
   # GET /lists/1
@@ -25,6 +26,7 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
+
 
     respond_to do |format|
       if @list.save

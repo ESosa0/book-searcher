@@ -1,4 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body { 
+  background: image-url('book_cover.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
+.box {
+  border-radius: 5px;
+  background-color: rgb(231,294,258);
+  opacity: 0.90;
+  margin-left: 37%;
+  margin-right: 32%;
+  margin-top: 10%;
+  padding: 1%;
+  text-align: center;
+}
