@@ -7,7 +7,8 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 1200px;
+  height:100vh;
+
   
 }
 
@@ -17,6 +18,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
   #book-image {
     height: 150px;
     width: auto;
@@ -40,18 +42,23 @@
 
 .box-left {
   border-radius: 5px;
-  margin-left: 20%;
+  margin-left: 10%;
   padding-top: 1%;
   text-align: left;
-  width: 25%;
   color: black;
+
 }
 
-.each-box {
+.each-book-box {
   margin-top: 10px;
 }
 
 .more-info {
     margin: 5% 0 0;
 }
+
+.box-right {
+  margin-left: 5%;
+}
+
 

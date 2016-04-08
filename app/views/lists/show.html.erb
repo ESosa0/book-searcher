@@ -1,23 +1,43 @@
-<div class="open-book">
-  <div class="box-left">
 
-
-    <p>
-      <strong>Category:</strong>
-      <%= (@list.name) %>
-      <%= link_to 'All categories', root_path %>
-    </p>
-
-      <% @books.each do |book| %>
-        <div class="each-book-box clearfix">
-          <%=image_tag((book.image), id: "book-image") %>
-          <h4><%= (book.name).titleize %></h4>
-          <%= book.author %>
-          <%= button_to "More info", {}, class: "btn more-info" %>
+<div class="container-fluid">
+  <div class="open-book">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-4">
+        <div class="box-left">
+          <% @books.each do |book| %>
+            <div class="each-book-box clearfix">
+              <%=image_tag((book.image), id: "book-image") %>
+              <h4><%= (book.name).titleize %></h4>
+              <%= book.author %>
+              <%= button_to "More info", "#", method: "get", data: { name: (book.name).titleize, 
+                                                                     author: book.author,
+                                                                     image: book.image,
+                                                                     description: book.description,
+                                                                     amazon_product_url: book.amazon_product_url,
+                                                                     rank: book.rank,
+                                                                     weeks_on_list: book.weeks_on_list,
+                                                                     primary_isbn13: book.primary_isbn13
+                                                                    }, class: "btn more-info" %>
+            </div>
+          <% end %> 
+        </div> 
+      </div>
+      <div class="col-md-4">
+        <div class="box-right">
+          <h2>
+            <%= (@list.name) %>
+          </h2>
+          <h4>
+            <%= link_to 'See all categories', root_path %>
+          </h4>
+          <div id="book-info"></div>
         </div>
-      <% end %>
-    
-
-    
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
   </div>
 </div>
+
