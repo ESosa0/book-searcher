@@ -1,17 +1,23 @@
-<div class="box">
-  <p id="notice"><%= notice %></p>
+<div class="open-book">
+  <div class="box-left">
 
-  <p>
-    <strong>Name:</strong>
-    <%= @list.name %>
-  </p>
 
-  <p>
-    <strong>Name encoded:</strong>
-    <%= @list.name_encoded %>
-  </p>
+    <p>
+      <strong>Category:</strong>
+      <%= (@list.name) %>
+      <%= link_to 'All categories', root_path %>
+    </p>
 
-  <%= link_to 'Edit', edit_list_path(@list) %> |
-  <%= link_to 'Back', lists_path %>
+      <% @books.each do |book| %>
+        <div class="each-book-box clearfix">
+          <%=image_tag((book.image), id: "book-image") %>
+          <h4><%= (book.name).titleize %></h4>
+          <%= book.author %>
+          <%= button_to "More info", {}, class: "btn more-info" %>
+        </div>
+      <% end %>
+    
 
+    
+  </div>
 </div>

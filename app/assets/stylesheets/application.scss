@@ -1,21 +1,57 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body { 
+.book-cover { 
   background: image-url('book_cover.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: 1200px;
+  
+}
+
+.open-book {
+  background: image-url('open_book_2.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  #book-image {
+    height: 150px;
+    width: auto;
+    display: inline-block;
+    float: left;
+    margin: 10px 10px 10px 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+  }
 }
 
 .box {
   border-radius: 5px;
-  background-color: rgb(231,294,258);
-  opacity: 0.90;
   margin-left: 37%;
   margin-right: 32%;
-  margin-top: 10%;
-  padding: 1%;
+  padding-top: 10%;
   text-align: center;
+  color: black;
 }
+
+.box-left {
+  border-radius: 5px;
+  margin-left: 20%;
+  padding-top: 1%;
+  text-align: left;
+  width: 25%;
+  color: black;
+}
+
+.each-box {
+  margin-top: 10px;
+}
+
+.more-info {
+    margin: 5% 0 0;
+}
+

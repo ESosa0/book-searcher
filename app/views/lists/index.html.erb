@@ -1,7 +1,9 @@
-<div class="box">
-  <h2>Search New York Times Best Sellers</h2>
-  <div class="dropdown">
-    <%= select_tag(:list_id, options_from_collection_for_select(@lists, "id", "name"), prompt: 'Choose category', class: "form-control") %>
+<div class="book-cover">
+  <div class="box">
+    <h2>Search New York Times Best Sellers</h2>
+    <div class="dropdown">
+      <%= select_tag(:list_id, options_from_collection_for_select(@lists, "id", "name"), prompt: 'Choose category', class: "form-control") %>
+    </div>
   </div>
 </div>
 
