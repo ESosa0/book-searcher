@@ -40,13 +40,19 @@
   color: black;
 }
 
+.left-column {
+
+  overflow: scroll;
+  
+}
 .box-left {
   border-radius: 5px;
   margin-left: 10%;
   padding-top: 1%;
   text-align: left;
   color: black;
-
+  max-height: 700px;
+  overflow: scroll;
 }
 
 .each-book-box {
@@ -58,7 +64,16 @@
 }
 
 .box-right {
-  margin-left: 5%;
+  margin-left: 10%;
+  img {
+    max-width: 100%
+  }
+  max-height: 700px;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
 }
 
 

@@ -4,14 +4,14 @@
     <div class="row">
       <div class="col-md-2">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 left-column">
         <div class="box-left">
           <% @books.each do |book| %>
             <div class="each-book-box clearfix">
               <%=image_tag((book.image), id: "book-image") %>
               <h4><%= (book.name).titleize %></h4>
               <%= book.author %>
-              <%= button_to "More info", "#", method: "get", data: { name: (book.name).titleize, 
+              <%= button_to "Info", "#", method: "get", data: { name: (book.name).titleize, 
                                                                      author: book.author,
                                                                      image: book.image,
                                                                      description: book.description,
@@ -32,7 +32,11 @@
           <h4>
             <%= link_to 'See all categories', root_path %>
           </h4>
-          <div id="book-info"></div>
+          <div id="book-info" class="hidden">
+          </div>
+          <%= link_to("#", class: 'amazon-button hidden', id: "buy-button") do 
+            image_tag('buy_from_amazon.jpg')
+          end %>
         </div>
       </div>
       <div class="col-md-2">
