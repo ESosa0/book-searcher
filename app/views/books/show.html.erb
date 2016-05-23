@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
+<h3><%= @book.name %></h3>
 
 <p>
   <strong>Author:</strong>
   <%= @book.author %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @book.image %>
-</p>
+<img src=<%= @book.image %>>
 
 <p>
   <strong>Description:</strong>
@@ -21,28 +13,24 @@
 </p>
 
 <p>
-  <strong>Amazon product url:</strong>
-  <%= @book.amazon_product_url %>
-</p>
-
-<p>
-  <strong>Age group:</strong>
-  <%= @book.age_group %>
+  <% unless @book.age_group == "" %>
+    <strong>Age group:</strong>
+    <%= @book.age_group %>
+  <% end %>
 </p>
 
 <p>
   <strong>Rank:</strong>
-  <%= @book.rank %>
+  #<%= @book.rank %>
 </p>
 
 <p>
   <strong>Weeks on list:</strong>
-  <%= @book.weeks_on_list %>
-</p>
-
-<p>
-  <strong>Primary isbn10:</strong>
-  <%= @book.primary_isbn10 %>
+    <% if @book.weeks_on_list == 0 %>
+      1
+    <% else %>
+      <%= @book.weeks_on_list %>
+    <% end %>
 </p>
 
 <p>

@@ -8,8 +8,9 @@ $(function() {
     event.preventDefault();
 
     $('#book-info').empty();
-
+    
     var name = $(event.currentTarget).data('name');
+    var id = $(event.currentTarget).data('id')
     var author = $(event.currentTarget).data('author');
     var isbn = $(event.currentTarget).data('primaryIsbn13');
     var description = $(event.currentTarget).data('description');
@@ -19,7 +20,7 @@ $(function() {
     var rank = $(event.currentTarget).data('rank')
 
     $('#book-info').append('<img src= ' + imageUrl + '>' );
-    $('#book-info').append('<h3>' + name + '<h3>');
+    $('#book-info').append('<a href="/books/' + id + '"' + '><h3>' + name + '<h3></a>');
     $('#book-info').append('<h4>' + author + '<h4>');
     $('#book-info').append('<p>' + 'Isbn13: ' + isbn + '</p>');
     $('#book-info').append('<p> Rank: ' + rank + '</p>');
@@ -33,14 +34,7 @@ $(function() {
       event.preventDefault();  
       window.location.href = amazonProductUrl;
     }); 
+
   });
-
-
-
-
-
-
-
-
 
 });

@@ -11,7 +11,8 @@
               <%=image_tag((book.image), id: "book-image") %>
               <h4><%= (book.name).titleize %></h4>
               <%= book.author %>
-              <%= button_to "Info", "#", method: "get", data: { name: (book.name).titleize, 
+              <%= button_to "Info", "#", method: "get", data: { name: (book.name).titleize,
+                                                                     id: book.id, 
                                                                      author: book.author,
                                                                      image: book.image,
                                                                      description: book.description,
@@ -30,7 +31,7 @@
             <%= (@list.name) %>
           </h2>
           <h4>
-            <%= link_to 'See all categories', root_path %>
+            <%= link_to 'Choose another category', root_path %>
           </h4>
           <div id="book-info" class="hidden">
           </div>
