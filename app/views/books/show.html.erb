@@ -1,42 +1,64 @@
-<h3><%= @book.name %></h3>
+<div class="container-fluid">
+  <div class="open-book">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-4 left-column">
+        <div class="box-left">
+    
+          <img src=<%= @book.image %>>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+          <h3><%= @book.name %></h3>
 
-<img src=<%= @book.image %>>
+          <p>
+            <strong>Author:</strong>
+            <%= @book.author %>
+          </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
+          <p>
+            <strong>Primary isbn13:</strong>
+            <%= @book.primary_isbn13 %>
+          </p>
 
-<p>
-  <% unless @book.age_group == "" %>
-    <strong>Age group:</strong>
-    <%= @book.age_group %>
-  <% end %>
-</p>
+          <p>
+            <% unless @book.age_group == "" %>
+              <strong>Age group:</strong>
+              <%= @book.age_group %>
+            <% end %>
+          </p>
 
-<p>
-  <strong>Rank:</strong>
-  #<%= @book.rank %>
-</p>
+          <p>
+            <strong>Rank:</strong>
+            #<%= @book.rank %>
+          </p>
 
-<p>
-  <strong>Weeks on list:</strong>
-    <% if @book.weeks_on_list == 0 %>
-      1
-    <% else %>
-      <%= @book.weeks_on_list %>
-    <% end %>
-</p>
+          <p>
+            <strong>Weeks on list:</strong>
+              <% if @book.weeks_on_list == 0 %>
+                1
+              <% else %>
+                <%= @book.weeks_on_list %>
+              <% end %>
+          </p>
 
-<p>
-  <strong>Primary isbn13:</strong>
-  <%= @book.primary_isbn13 %>
-</p>
+          <p>
+            <strong>Description:</strong>
+            <%= @book.description %>
+          </p>
+        </div>
+      </div>
+    
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+      <div class="col-md-4">
+        <div class="box-right">
+          <% @book.critic_reviews.each do |critic_review| %>
+            <p><strong><%= critic_review.source %></strong> gives it <strong><%= critic_review.star_rating %>/5 stars</strong> and says...</p>
+            <p><%= critic_review.snippet %> <a href=<%= critic_review.review_link%>>more...</a></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+</div>
