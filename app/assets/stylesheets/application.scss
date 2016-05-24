@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.book-cover { 
+.front-page { 
   background: image-url('book_cover.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,7 +10,28 @@
   height:100vh;
 }
 
-.open-book {
+.book-list-page {
+  background: image-url('open_book_2.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+  padding-top: 3%;
+
+  #book-image {
+    height: 150px;
+    width: auto;
+    display: inline-block;
+    float: left;
+    margin: 10px 10px 10px 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+  }
+}
+
+.book-info-page {
   background: image-url('open_book_2.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -84,13 +105,56 @@
   display: none;
 }
 
-@media (max-width: 1099px) and (orientation: landscape) {
-  .open-book {
-    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+
+
+@media only screen and ( max-width: 480px ) {
+  background: image-url('book_cover.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+}
+
+
+@media only screen and ( max-width: 768px ) {
+  background: image-url('book_cover.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+}
+
+@media only screen and ( max-width: 990px ) {
+  .book-list-page, .book-info-page {
+    background: image-url('books-on-the-side.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height:100vh;
+  }
+  .box-left {
+    margin-left: 30%;
+    margin-top: 3%;
+    border-radius: 0;
+    overflow: scroll;
+  }
+  .box-right {
+    padding-top: 5%;
+    margin-left: 30%;
+    margin-right: 17%;
+  }
+  .book-list-page.box-right {
+    display:none;
+  }
+  .background-box {
+    background:rgba(255,255,255, 0.4);
+    padding-left: 5%;
+    margin-left: 22%;
+    margin-right: 17%;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
+

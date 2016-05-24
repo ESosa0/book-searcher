@@ -19,6 +19,10 @@ $(function() {
     var imageUrl = $(event.currentTarget).data('image')
     var rank = $(event.currentTarget).data('rank')
 
+    if($(window).width() <= 990){
+      window.location.href = '/books/' + id;
+    }
+
     $('#book-info').append('<img src= ' + imageUrl + '>' );
     $('#book-info').append('<a href="/books/' + id + '"' + '><h3>' + name + '<h3></a>');
     $('#book-info').append('<h4>' + author + '<h4>');

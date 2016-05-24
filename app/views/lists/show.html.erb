@@ -1,11 +1,11 @@
 
 <div class="container-fluid">
-  <div class="open-book">
+  <div class="book-list-page">
     <div class="row">
       <div class="col-md-2">
       </div>
       <div class="col-md-4 left-column">
-        <div class="box-left">
+        <div class="box-left background-box">
           <% @books.each do |book| %>
             <div class="each-book-box clearfix">
               <%=image_tag((book.image), id: "book-image") %>
@@ -26,7 +26,7 @@
         </div> 
       </div>
       <div class="col-md-4">
-        <div class="box-right">
+        <div class="box-right .hidden-xs .hidden-sm .hidden-md">
           <h2>
             <%= (@list.name) %>
           </h2>

@@ -1,10 +1,10 @@
 <div class="container-fluid">
-  <div class="open-book">
+  <div class="book-info-page">
     <div class="row">
       <div class="col-md-2">
       </div>
       <div class="col-md-4 left-column">
-        <div class="box-left">
+        <div class="box-left background-box">
     
           <img src=<%= @book.image %>>
 
@@ -50,10 +50,18 @@
     
 
       <div class="col-md-4">
-        <div class="box-right">
+        <div class="box-right background-box">
           <% @book.critic_reviews.each do |critic_review| %>
-            <p><strong><%= critic_review.source %></strong> gives it <strong><%= critic_review.star_rating %>/5 stars</strong> and says...</p>
-            <p><%= critic_review.snippet %> <a href=<%= critic_review.review_link%>>more...</a></p>
+          
+            <blockquote>
+              <p>
+                <%= critic_review.snippet %> 
+                <small><a href=<%= critic_review.review_link%>>more...</a></small>
+              </p>
+
+              <footer><p><strong><%= critic_review.source %></strong> gave it <strong><%= critic_review.star_rating %>/5 stars</strong></p></footer>
+            </blockquote>
+
           <% end %>
         </div>
       </div>
