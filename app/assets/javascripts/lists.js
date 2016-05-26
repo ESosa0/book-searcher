@@ -1,12 +1,9 @@
-$(function() {
+$(function() { 
+
   $('#list_id').change(function(){
     var id = $(this).val();
     window.location.href = '/lists/'+ id;
   });
-// // try moving this out of the function and changing screen size 
-//   if($(window).width() <= 769){ 
-//       $('.box-right').addClass('hidden');
-//   }
 
   $('.more-info').click(function(event){
     event.preventDefault();
@@ -14,14 +11,14 @@ $(function() {
     $('#book-info').empty();
     
     var name = $(event.currentTarget).data('name');
-    var id = $(event.currentTarget).data('id')
+    var id = $(event.currentTarget).data('id');
     var author = $(event.currentTarget).data('author');
     var isbn = $(event.currentTarget).data('primaryIsbn13');
     var description = $(event.currentTarget).data('description');
     var weeksOnList = $(event.currentTarget).data('weeksOnList');
     var amazonProductUrl = $(event.currentTarget).data('amazonProductUrl');
-    var imageUrl = $(event.currentTarget).data('image')
-    var rank = $(event.currentTarget).data('rank')
+    var imageUrl = $(event.currentTarget).data('image');
+    var rank = $(event.currentTarget).data('rank');
 
     if($(window).width() <= 992){
       window.location.href = '/books/' + id;
@@ -37,11 +34,6 @@ $(function() {
 
     $('#buy-button').removeClass('hidden');
     $('#book-info').removeClass('hidden');
-
-    $('#buy-button').click(function(event){
-      event.preventDefault();  
-      window.location.href = amazonProductUrl;
-    }); 
 
   });
 

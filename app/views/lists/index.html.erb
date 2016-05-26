@@ -1,6 +1,7 @@
 <div class="front-page">
   <div class="box">
-    <h2>Search New York Times Best Sellers</h2>
+    <h1 class="main-title">BookSearcher</h1>
+    <h5 class="sub-title">What's everybody reading this week?</h5>
     <div class="dropdown">
       <%= select_tag(:list_id, options_from_collection_for_select(@lists, "id", "name"), prompt: 'Choose category', class: "form-control") %>
     </div>

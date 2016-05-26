@@ -1,5 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Playfair-Display-SC:400,700);
+
+.main-title {
+  font-family: 'Playfair Display SC';
+  color: #310c0c;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 5%;
+  // font-size: 350%;
+  margin-top: 0;
+}
+
+.sub-title {
+  margin-bottom: 5%;
+  color: #191919;
+  font-style: italic;
+}
 
 @media only screen and ( min-width: 992px ) {
   .front-page { 
@@ -77,7 +94,7 @@
   }
   .box-left {
     border-radius: 5px;
-    margin: 10% 0 10% 10%;
+    margin: 10% 0 10%;
     padding-top: 1%;
     text-align: left;
     color: black;
@@ -161,8 +178,6 @@
     display:none;
   }
 }
-
-
 
 @media only screen and ( min-width: 480px ) and (max-width: 768px) and (orientation:portrait) {
   .front-page { 
@@ -280,7 +295,7 @@
   }
   .box {
     border-radius: 5px;
-    margin-left: 30%;
+    margin-left: 22%;
     margin-right: 22%;
     padding-top: 40%;
     text-align: center;
@@ -386,4 +401,5 @@
     display:none;
   }
 }
+
 

@@ -45,18 +45,34 @@
             <strong>Description:</strong>
             <%= @book.description %>
           </p>
+          <p>
+            <%= link_to(@book.amazon_product_url) do %> 
+              <% image_tag('buy_from_amazon.jpg') %>
+            <%end%>
+          </p>
+          <p>
+            <%= link_to 'Choose another book', :back %>
+          </p>
+          <p>
+            <%= link_to 'Choose another category', root_path %>
+          </p>
         </div>
       </div>
     
 
       <div class="col-md-4">
         <div class="box-right background-box">
+          <% if @book.critic_reviews.count == 0 %>
+            <blockquote>
+              <p>Critic reviews coming soon!</p>
+              <footer>Booksearcher</footer>
+            </blockquote>
+          <% end %>
           <% @book.critic_reviews.each do |critic_review| %>
-          
             <blockquote>
               <p>
                 <%= critic_review.snippet %> 
-                <small><a href=<%= critic_review.review_link%>>more...</a></small>
+                <small><a href=<%= critic_review.review_link%>>more</a></small>
               </p>
 
               <footer><p><strong><%= critic_review.source %></strong> gave it <strong><%= critic_review.star_rating %>/5 stars</strong></p></footer>
