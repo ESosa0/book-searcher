@@ -6,6 +6,12 @@
       </div>
       <div class="col-md-4 left-column">
         <div class="box-left background-box">
+          <h2>
+            <%= (@list.name) %>
+          </h2>
+          <h4>
+            <%= link_to 'Choose another category', root_path %>
+          </h4>
           <% @books.each do |book| %>
             <div class="each-book-box clearfix">
               <%=image_tag((book.image), id: "book-image") %>
@@ -26,13 +32,7 @@
         </div> 
       </div>
       <div class="col-md-4">
-        <div class="box-right .hidden-xs .hidden-sm .hidden-md">
-          <h2>
-            <%= (@list.name) %>
-          </h2>
-          <h4>
-            <%= link_to 'Choose another category', root_path %>
-          </h4>
+        <div class="box-right">
           <div id="book-info" class="hidden">
           </div>
           <%= link_to("#", class: 'amazon-button hidden', id: "buy-button") do 

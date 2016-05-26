@@ -1,160 +1,271 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.front-page { 
-  background: image-url('book_cover.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height:100vh;
-}
+@media only screen and ( min-width: 990px ) {
+  .front-page { 
+    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+  }
 
-.book-list-page {
-  background: image-url('open_book_2.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 800px;
-  padding-top: 3%;
+  .book-list-page {
+    background: image-url('open_book_2.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 800px;
+    padding-top: 3%;
 
-  #book-image {
-    height: 150px;
-    width: auto;
-    display: inline-block;
-    float: left;
-    margin: 10px 10px 10px 0;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
+  }
+
+  .book-info-page {
+    background: image-url('open_book_2.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 800px;
+
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
+  }
+
+  .box {
+    border-radius: 5px;
+    margin-left: 37%;
+    margin-right: 32%;
+    padding-top: 15%;
+    text-align: center;
+    color: black;
+  }
+
+  .open-book-box {
+    border-radius: 5px;
+    margin-left: 37%;
+    margin-right: 32%;
+    text-align: left;
+    color: black;
+    background:rgba(255,255,255, 0.9);
+  }
+
+  .left-column {
+
+    overflow: scroll;
+    
+  }
+  .box-left {
+    border-radius: 5px;
+    margin: 10% 0 10% 10%;
+    padding-top: 1%;
+    text-align: left;
+    color: black;
+    max-height: 700px;
+    overflow: scroll;
+  }
+
+  .each-book-box {
+    margin-top: 10px;
+  }
+
+  .more-info {
+      margin: 5% 0 0;
+  }
+
+  .box-right {
+    margin: 10% 0 10% 10%;
+    img {
+      max-width: 100%
+    }
+    max-height: 700px;
+    overflow: scroll;
+  }
+
+  .hidden {
+    display: none;
   }
 }
 
-.book-info-page {
-  background: image-url('open_book_2.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 800px;
-
-  #book-image {
-    height: 150px;
-    width: auto;
-    display: inline-block;
-    float: left;
-    margin: 10px 10px 10px 0;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .front-page { 
+    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
   }
-}
-
-.box {
-  border-radius: 5px;
-  margin-left: 37%;
-  margin-right: 32%;
-  padding-top: 10%;
-  text-align: center;
-  color: black;
-}
-
-.open-book-box {
-  border-radius: 5px;
-  margin-left: 37%;
-  margin-right: 32%;
-  text-align: left;
-  color: black;
-  background:rgba(255,255,255, 0.9);
-}
-
-.left-column {
-
-  overflow: scroll;
-  
-}
-.box-left {
-  border-radius: 5px;
-  margin: 10% 0 10% 10%;
-  padding-top: 1%;
-  text-align: left;
-  color: black;
-  max-height: 700px;
-  overflow: scroll;
-}
-
-.each-book-box {
-  margin-top: 10px;
-}
-
-.more-info {
-    margin: 5% 0 0;
-}
-
-.box-right {
-  margin: 10% 0 10% 10%;
-  img {
-    max-width: 100%
+  .box {
+    border-radius: 5px;
+    margin-left: 35%;
+    margin-right: 30%;
+    padding-top: 30%;
+    text-align: center;
+    color: black;
   }
-  max-height: 700px;
-  overflow: scroll;
-}
-
-.hidden {
-  display: none;
-}
-
-
-
-@media only screen and ( max-width: 480px ) {
-  background: image-url('book_cover.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height:100vh;
-}
-
-
-@media only screen and ( max-width: 768px ) {
-  background: image-url('book_cover.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height:100vh;
-}
-
-@media only screen and ( max-width: 990px ) {
+  .box-left, .background-box {
+    background:rgba(255,255,255, 0.4);
+    padding-left: 5%;
+    margin-left: 25%;
+    margin-right: 19%;
+    margin-top: 2%;
+    height: 1000px;
+  }
   .book-list-page, .book-info-page {
     background: image-url('books-on-the-side.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
-  .box-left {
-    margin-left: 30%;
-    margin-top: 3%;
-    border-radius: 0;
-    overflow: scroll;
-  }
-  .box-right {
-    padding-top: 5%;
-    margin-left: 30%;
-    margin-right: 17%;
-  }
-  .book-list-page.box-right {
-    display:none;
+    min-height: 1024px;
+    padding-top: 3%;
+
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
   }
   .background-box {
-    background:rgba(255,255,255, 0.4);
-    padding-left: 5%;
-    margin-left: 22%;
-    margin-right: 17%;
-    margin-bottom: 0;
-    margin-top: 0;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
 }
+
+
+
+@media only screen and ( min-width: 480px ) and (max-width: 768px) {
+  .front-page { 
+    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+  }
+  .box {
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-right: 22%;
+    padding-top: 40%;
+    text-align: center;
+    color: black;
+  }
+  .box-left, .background-box {
+    background:rgba(255,255,255, 0.4);
+    padding-left: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 1000px;
+  }
+  .book-list-page, .book-info-page {
+    background: image-url('books-on-the-side.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 1024px;
+    padding-top: 3%;
+
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
+  }
+  .background-box {
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .front-page { 
+    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+  }
+  .box {
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-right: 22%;
+    padding-top: 40%;
+    text-align: center;
+    color: black;
+  }
+  .box-left, .background-box {
+    background:rgba(255,255,255, 0.4);
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 1000px;
+    img {
+      max-width: 100%;
+    }
+
+  }
+  .book-list-page, .book-info-page {
+    background: image-url('books-on-the-side.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 1024px;
+    padding-top: 3%;
+
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
+  }
+  .background-box {
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+
 
