@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media only screen and ( min-width: 990px ) {
+@media only screen and ( min-width: 992px ) {
   .front-page { 
     background: image-url('book_cover.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -107,7 +107,7 @@
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 990px) {
+@media only screen and (min-width: 769px) and (max-width: 991px) {
   .front-page { 
     background: image-url('book_cover.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -157,11 +157,68 @@
     padding-top: 5%;
     padding-bottom: 5%;
   }
+  .box-right {
+    display:none;
+  }
 }
 
 
 
-@media only screen and ( min-width: 480px ) and (max-width: 768px) {
+@media only screen and ( min-width: 480px ) and (max-width: 768px) and (orientation:portrait) {
+  .front-page { 
+    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+  }
+  .box {
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-right: 22%;
+    padding-top: 40%;
+    text-align: center;
+    color: black;
+  }
+  .box-left, .background-box {
+    background:rgba(255,255,255, 0.4);
+    padding-left: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 1000px;
+  }
+  .book-list-page, .book-info-page {
+    background: image-url('books-on-the-side.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 1024px;
+    padding-top: 3%;
+
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
+  }
+  .background-box {
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .box-right {
+    display:none;
+  }
+}
+
+@media only screen and ( min-width: 480px ) and (max-width: 768px) and (orientation:landscape) {
   .front-page { 
     background: image-url('book_cover.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -212,9 +269,9 @@
   }
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 479px) and (orientation:portrait) {
   .front-page { 
-    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    background: image-url('book_cover_2.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -266,6 +323,67 @@
     padding-top: 5%;
     padding-bottom: 5%;
   }
+  .hidden {
+    display:none;
+  }
 }
 
+@media only screen and (max-width: 800px) and (orientation:landscape) {
+  .front-page { 
+    background: image-url('book_cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+  }
+  .box {
+    border-radius: 5px;
+    margin-left: 35%;
+    margin-right: 31%;
+    padding-top: 15%;
+    text-align: center;
+    color: black;
+  }
+  .box-left, .background-box {
+    background:rgba(255,255,255, 0.4);
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 20%;
+    margin-right: 15%;
+    height: 1000px;
+    img {
+      max-width: 100%;
+    }
+
+  }
+  .book-list-page, .book-info-page {
+    background: image-url('books-on-the-side.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 1024px;
+    padding-top: 3%;
+
+    #book-image {
+      height: 150px;
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin: 10px 10px 10px 0;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+    }
+  }
+  .background-box {
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .hidden {
+    display:none;
+  }
+}
 

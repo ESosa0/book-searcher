@@ -3,6 +3,10 @@ $(function() {
     var id = $(this).val();
     window.location.href = '/lists/'+ id;
   });
+// // try moving this out of the function and changing screen size 
+//   if($(window).width() <= 769){ 
+//       $('.box-right').addClass('hidden');
+//   }
 
   $('.more-info').click(function(event){
     event.preventDefault();
@@ -19,7 +23,7 @@ $(function() {
     var imageUrl = $(event.currentTarget).data('image')
     var rank = $(event.currentTarget).data('rank')
 
-    if($(window).width() <= 990){
+    if($(window).width() <= 992){
       window.location.href = '/books/' + id;
     }
 
