@@ -5,7 +5,6 @@ class IdreambooksApiClient
       url = "https://idreambooks.com/api/books/reviews.json?q=#{book.primary_isbn13}&key=947ddde9849228bca1d1cf6bdb434d9ab7a73990"
       response = RestClient.get(url)
       response = JSON.parse(response)
-      puts response.inspect
       critic_reviews = response["book"]["critic_reviews"]
       
       unless critic_reviews == nil
@@ -28,6 +27,16 @@ class IdreambooksApiClient
           end
         end
       end
+    end
+  end
+  def self.get_review_score
+    Book.all.each do |book|
+      url = "https://idreambooks.com/api/books/reviews.json?q=#{book.primary_isbn13}&key=947ddde9849228bca1d1cf6bdb434d9ab7a73990"
+      Rails.logger.info "URL: #{url}"
+      response = RestClient.get(url)
+      response = JSON.parse(response)
+      book.update review_score: response["book"]["rating"] 
+      Rails.logger.info "Review score for #{book.name} with id##{book.id} is #{book.review_score}. Saved." 
     end
   end
 end
