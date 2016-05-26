@@ -21,7 +21,7 @@
           </p>
 
           <p>
-            <% unless @book.age_group == "" %>
+            <% unless @book.age_group.blank? %>
               <strong>Age group:</strong>
               <%= @book.age_group %>
             <% end %>
@@ -34,22 +34,29 @@
 
           <p>
             <strong>Weeks on list:</strong>
-              <% if @book.weeks_on_list == 0 %>
+              <% if @book.weeks_on_list.zero? %>
                 1
               <% else %>
                 <%= @book.weeks_on_list %>
               <% end %>
           </p>
+          <p>
+            <% unless @book.review_score.blank? %>
+              <strong>Critics' score:</strong> <%= number_to_percentage(@book.review_score, precision: 0) %>
+            <% end %>
+          </p>
 
           <p>
-            <strong>Description:</strong>
-            <%= @book.description %>
+            <% unless @book.description.blank? %>
+              <strong>Description:</strong><%= @book.description %>
+            <% end %>
           </p>
           <p>
             <%= link_to(@book.amazon_product_url) do %> 
               <% image_tag('buy_from_amazon.jpg') %>
             <%end%>
           </p>
+
           <p>
             <%= link_to 'Choose another book', :back %>
           </p>

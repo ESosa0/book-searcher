@@ -19,6 +19,7 @@ $(function() {
     var amazonProductUrl = $(event.currentTarget).data('amazonProductUrl');
     var imageUrl = $(event.currentTarget).data('image');
     var rank = $(event.currentTarget).data('rank');
+    var bookPath = $(event.currentTarget).data('path');
 
     if($(window).width() <= 992){
       window.location.href = '/books/' + id;
@@ -31,6 +32,8 @@ $(function() {
     $('#book-info').append('<p> Rank: ' + rank + '</p>');
     $('#book-info').append('<p> Number of weeks on Best Seller list: ' + weeksOnList + '</p>');
     $('#book-info').append('<p> Description: ' + description + '</p>');
+    $('#book-info').append('<p> <a href="' + bookPath + '">See the reviews</a></p>');
+
 
     $('#buy-button').removeClass('hidden');
     $('#book-info').removeClass('hidden');

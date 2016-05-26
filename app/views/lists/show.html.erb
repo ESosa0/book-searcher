@@ -25,7 +25,8 @@
                                                                      amazon_product_url: book.amazon_product_url,
                                                                      rank: book.rank,
                                                                      weeks_on_list: book.weeks_on_list,
-                                                                     primary_isbn13: book.primary_isbn13
+                                                                     primary_isbn13: book.primary_isbn13,
+                                                                     path: book_path(book)
                                                                     }, class: "btn more-info" %>
             </div>
           <% end %> 
