@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every :monday, :at => '12pm' do # Use any day of the week or :weekend, :weekday
-  rake "database:update"
+  rake "database:update_books"
 end
