@@ -1,10 +1,14 @@
 class BookApiClient
 
   def self.add_list_names
+
+    List.destroy_all
+    
     url = "http://api.nytimes.com/svc/books/v3/lists/overview.json?&api-key=b8c2a744ea174b41829f830c55c2ba68"
     response = RestClient.get(url)
     response = JSON.parse(response)
     lists = response["results"]["lists"]
+    
     lists.each do |list|
       List.create name: list["list_name"], name_encoded: list["list_name_encoded"]
     end
@@ -44,16 +48,5 @@ class BookApiClient
       end
     end
   end
-
-  def self.clear_lists
-    List.all.each do |list|
-      list.books.destroy_all
-    end
-  end
-
-  def self.clear_books
-    Book.destroy_all
-  end
-  
 end
 
