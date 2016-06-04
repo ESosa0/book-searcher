@@ -14,7 +14,9 @@
           </h4>
           <% @books.each do |book| %>
             <div class="each-book-box clearfix">
-              <%=image_tag((book.image), id: "book-image") %>
+              <% if book.image %>
+                <%=image_tag((book.image), id: "book-image") %>
+              <% end %>
               <h4><%= (book.name).titleize %></h4>
               <%= book.author %>
               <%= button_to "Info", "#", method: "get", data: { name: (book.name).titleize,

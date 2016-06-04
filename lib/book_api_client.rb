@@ -1,7 +1,7 @@
 class BookApiClient
 
   def self.add_list_names
-    url = "http://api.nytimes.com/svc/books/v3/lists/overview.json?&api-key=66173255f070c8345fb890d3b2b63ba5:12:74940926"
+    url = "http://api.nytimes.com/svc/books/v3/lists/overview.json?&api-key=b8c2a744ea174b41829f830c55c2ba68"
     response = RestClient.get(url)
     response = JSON.parse(response)
     lists = response["results"]["lists"]
@@ -13,12 +13,14 @@ class BookApiClient
   # To run in console, must require 'book_api_client'
   def self.add_books_by_list
 
+    Book.destroy_all
+
     List.all.each do |list|
-      url = "http://api.nytimes.com/svc/books/v3/lists/#{list.name_encoded}.json?&&api-key=66173255f070c8345fb890d3b2b63ba5:12:74940926"
+
+      url = "http://api.nytimes.com/svc/books/v3/lists/#{list.name_encoded}.json?&&api-key=b8c2a744ea174b41829f830c55c2ba68"
       response = RestClient.get(url)
       response = JSON.parse(response)
       books = response["results"]["books"]
-
 
       books.each do |book|
         current_book = Book.where(primary_isbn13: book["primary_isbn13"]).first
@@ -42,5 +44,16 @@ class BookApiClient
       end
     end
   end
+
+  def self.clear_lists
+    List.all.each do |list|
+      list.books.destroy_all
+    end
+  end
+
+  def self.clear_books
+    Book.destroy_all
+  end
+  
 end
 

@@ -11,38 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526104320) do
+ActiveRecord::Schema.define(version: 20160604034045) do
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name"
     t.string   "author"
     t.string   "image"
-    t.text     "description"
+    t.text     "description",        limit: 65535
     t.string   "amazon_product_url"
     t.string   "age_group"
     t.integer  "rank"
     t.integer  "weeks_on_list"
     t.string   "primary_isbn10"
     t.string   "primary_isbn13"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "review_score"
   end
 
-  create_table "books_lists", id: false, force: :cascade do |t|
+  create_table "books_lists", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "book_id"
     t.integer "list_id"
   end
 
-  add_index "books_lists", ["book_id"], name: "index_books_lists_on_book_id"
-  add_index "books_lists", ["list_id"], name: "index_books_lists_on_list_id"
+  add_index "books_lists", ["book_id"], name: "index_books_lists_on_book_id", using: :btree
+  add_index "books_lists", ["list_id"], name: "index_books_lists_on_list_id", using: :btree
 
-  create_table "critic_reviews", force: :cascade do |t|
+  create_table "critic_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "book_id"
-    t.string  "title"
-    t.string  "author"
     t.string  "source"
-    t.string  "snippet"
+    t.text    "snippet",       limit: 65535
     t.string  "review_link"
     t.string  "pos_or_neg"
     t.string  "star_rating"
@@ -51,9 +49,9 @@ ActiveRecord::Schema.define(version: 20160526104320) do
     t.string  "source_logo"
   end
 
-  add_index "critic_reviews", ["book_id"], name: "index_critic_reviews_on_book_id"
+  add_index "critic_reviews", ["book_id"], name: "index_critic_reviews_on_book_id", using: :btree
 
-  create_table "lists", force: :cascade do |t|
+  create_table "lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name"
     t.string   "name_encoded"
     t.datetime "created_at",   null: false
