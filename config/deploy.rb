@@ -1,6 +1,9 @@
 # Change these
 server 'booksearcher.erica.tech', roles: [:web, :app, :db], primary: true
 
+set :rvm_ruby_version, '2.3.0'      # Defaults to: 'default'
+
+
 set :repo_url,        'https://github.com/ESosa0/book-searcher'
 set :application,     'booksearcher'
 set :user,            'erica'

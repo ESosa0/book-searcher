@@ -51,4 +51,4 @@ production:
   <<: *default
   database: booksearcher_production
   username: booksearcher
-  password: <%= ENV['BLAH_DATABASE_PASSWORD'] %>
+  password: <%= ENV['BOOKSEARCHER_DATABASE_PASSWORD'] %>
