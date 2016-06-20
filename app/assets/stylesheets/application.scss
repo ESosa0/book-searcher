@@ -108,6 +108,8 @@
 
   .more-info {
       margin: 5% 0 0;
+      background-color: #FFF;
+      border-color: #D3D3D3; 
   }
 
   .box-right {
@@ -178,6 +180,12 @@
     display:none;
   }
 }
+
+  .more-info {
+      margin: 5% 0 0;
+      background-color: #FFF;
+      border-color: #D3D3D3; 
+  }
 
 @media only screen and ( min-width: 480px ) and (max-width: 768px) and (orientation:portrait) {
   .front-page { 
