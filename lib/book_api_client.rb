@@ -22,6 +22,7 @@ class BookApiClient
     List.all.each do |list|
 
       url = "http://api.nytimes.com/svc/books/v3/lists/#{list.name_encoded}.json?&&api-key=b8c2a744ea174b41829f830c55c2ba68"
+      Rails.logger.info "trying to load books for #{url}"
       response = RestClient.get(url)
       response = JSON.parse(response)
       books = response["results"]["books"]
