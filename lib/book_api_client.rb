@@ -4,7 +4,7 @@ class BookApiClient
 
     List.destroy_all
     
-    url = "http://api.nytimes.com/svc/books/v3/lists/overview.json?&api-key=d3ba92b3c7b049fd826a4247d4caa626"
+    url = "http://api.nytimes.com/svc/books/v3/lists/overview.json?&api-key=b8c2a744ea174b41829f830c55c2ba68"
     response = RestClient.get(url)
     response = JSON.parse(response)
     lists = response["results"]["lists"]
@@ -21,7 +21,7 @@ class BookApiClient
 
     List.all.each do |list|
 
-      url = "http://api.nytimes.com/svc/books/v3/lists/#{list.name_encoded}.json?&&api-key=d3ba92b3c7b049fd826a4247d4caa626"
+      url = "http://api.nytimes.com/svc/books/v3/lists/#{list.name_encoded}.json?&&api-key=b8c2a744ea174b41829f830c55c2ba68"
       Rails.logger.info "trying to load books for #{url}"
       response = RestClient.get(url)
       response = JSON.parse(response)
